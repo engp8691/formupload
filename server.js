@@ -8,6 +8,9 @@ const PORT = 3000;
 app.use(express.static('public'));
 
 app.post('/upload', upload.single('file'), (req, res) => {
+    console.log(req.file);
+    console.log(req.firstName);
+
     if(req.file) {
         res.json(req.file);
     }
